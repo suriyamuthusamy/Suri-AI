@@ -1,0 +1,15 @@
+from tavily import TavilyClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
+
+response = client.search(
+    query="Latest AI news",
+    search_depth="basic",
+    max_results=3
+)
+
+print(response)
